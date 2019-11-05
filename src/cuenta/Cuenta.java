@@ -23,12 +23,15 @@ public class Cuenta
 
  public  void ingresar(double b){
     
- saldo=1000;
+ saldo=b+saldo;
  }
  
  public  void retirar(double c){
  
- saldo=-1000;
+     if(saldo-c<-500){
+         System.out.println("Es menos que -500");
+     }
+     else saldo=-saldo-c;
  
  }
     
