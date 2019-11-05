@@ -1,4 +1,6 @@
 
+import cuenta.Cuenta;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,7 +23,7 @@ public class CuentaTest {
     
     @Before
     public void setUp() {
-        cuenta = new Cuenta("0001.0002.12.1234567890", "Fulano de Tal");
+        cuenta = new Cuenta("0001.0002.12.1234567890", "Fulano de Tal",0);
                      }
     
   
@@ -34,7 +36,7 @@ public class CuentaTest {
         double x = 1000.0;
         try {
         cuenta.ingresar(x);
-        assertTrue(cuenta.getSaldo()==1000.0);
+        assertTrue(cuenta.getsaldo()==1000.0);
             }
         catch (Exception e)
         {
@@ -54,7 +56,7 @@ public class CuentaTest {
          {
         
         }
-        assertEquals(cuenta.getSaldo,0.0);
+        assertTrue(cuenta.getsaldo()==-1000);
          }
    
 }
